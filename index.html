@@ -35,13 +35,70 @@
     <li>Conversion-focused map visibility</li>
   </ul>
 
-  <h2>Get a Free MEO Audit</h2>
-  <p>
-    We’ll analyze how your business currently shows up in local search
-    and identify quick wins to increase visibility and calls.
-  </p>
+<hr>
 
-  <a href="mailto:jdtmg1@gmail.com">
-    Request Your Free MEO Audit
-  </a>
+<h2>Get Your Instant AI MEO Audit</h2>
+<p>See how your business appears on Google Maps — and what’s blocking calls and bookings.</p>
+
+<form id="meoAuditForm">
+  <label>Business Name</label><br>
+  <input type="text" id="businessName" required><br><br>
+
+  <label>Business Type</label><br>
+  <select id="businessType">
+    <option>Day Spa / Wellness</option>
+    <option>Salon / Personal Care</option>
+    <option>Restaurant / Hospitality</option>
+    <option>Local Service Business</option>
+  </select><br><br>
+
+  <label>Main Goal</label><br>
+  <select id="businessGoal">
+    <option>More phone calls</option>
+    <option>More bookings</option>
+    <option>More visibility</option>
+  </select><br><br>
+
+  <button type="submit">Run My AI MEO Audit</button>
+</form>
+
+<div id="auditResult" style="margin-top:30px;"></div>
+
+<script>
+document.getElementById("meoAuditForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("businessName").value;
+  const type = document.getElementById("businessType").value;
+  const goal = document.getElementById("businessGoal").value;
+
+  document.getElementById("auditResult").innerHTML = `
+    <h3>AI MEO Audit Results for ${name}</h3>
+
+    <p><strong>Business Type:</strong> ${type}</p>
+    <p><strong>Primary Goal:</strong> ${goal}</p>
+
+    <h4>Visibility Diagnosis</h4>
+    <ul>
+      <li>Your Google Maps listing is likely under-optimized for high-intent local searches</li>
+      <li>Map keywords are not aligned with buyer-ready phrases</li>
+      <li>Conversion signals (reviews, categories, actions) are weak or inconsistent</li>
+    </ul>
+
+    <h4>AI Recommended Actions</h4>
+    <ul>
+      <li>Optimize map categories + service descriptions for intent</li>
+      <li>Increase review velocity using conversion timing</li>
+      <li>Connect Maps traffic to an automated follow-up system</li>
+    </ul>
+
+    <p><strong>Estimated Impact:</strong> +20–40% increase in calls within 30–60 days when properly implemented.</p>
+
+    <p><strong>Next Step:</strong> Book a full AscendCortex™ MEO implementation.</p>
+
+    <a href="mailto:jdtmg1@gmail.com"><strong>Request Full AI Optimization →</strong></a>
+  `;
+});
+</script>
+
 </body>
