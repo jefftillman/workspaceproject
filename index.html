@@ -4,103 +4,351 @@
   <meta charset="UTF-8" />
   <title>AscendCortex™ MEO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#101826;
+      --text:#e8eef6;
+      --muted:#a9b6c7;
+      --line:rgba(255,255,255,.10);
+      --accent:#6ee7ff;
+      --accent2:#a78bfa;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(110,231,255,.14), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(167,139,250,.12), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:980px; margin:0 auto; padding:32px 18px 70px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 0 26px;
+      border-bottom:1px solid var(--line);
+      margin-bottom:26px;
+    }
+    .brand{
+      font-weight:800; letter-spacing:.2px;
+      display:flex; gap:10px; align-items:center;
+    }
+    .pill{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line); padding:6px 10px; border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .hero{
+      padding:26px 0 18px;
+    }
+    .hero h1{
+      margin:0 0 10px;
+      font-size:40px;
+      line-height:1.05;
+      letter-spacing:-.5px;
+    }
+    .hero p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:16px;
+      max-width:70ch;
+    }
+    .proof{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin:0 0 18px;
+      padding:0;
+      list-style:none;
+    }
+    .proof li{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      padding:10px 12px;
+      border-radius:12px;
+      color:var(--text);
+      font-size:13px;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .btn{
+      border:none;
+      border-radius:14px;
+      padding:12px 16px;
+      font-weight:700;
+      cursor:pointer;
+      background: linear-gradient(90deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      color:#061018;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .btn:active{transform: translateY(1px)}
+    .ghost{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      border-radius:14px;
+      padding:12px 16px;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:22px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
+    }
+
+    .card{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-radius:18px;
+      padding:18px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .list{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--text);
+    }
+    .list li{margin:6px 0; color:var(--text)}
+    .muted{color:var(--muted)}
+    .divider{height:1px; background:var(--line); margin:22px 0}
+
+    /* Form */
+    .formTitle{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:flex-start;
+      margin-bottom:10px;
+    }
+    .formTitle h2{margin:0}
+    .trust{
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--line); padding:6px 10px; border-radius:999px;
+      background: rgba(255,255,255,.03);
+      height:fit-content;
+    }
+    label{display:block; margin:12px 0 6px; font-weight:650; font-size:13px}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:86px; resize:vertical}
+    .hint{font-size:12px; color:var(--muted); margin-top:6px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .result{
+      margin-top:16px;
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .result h3{margin:0 0 8px}
+    .result h4{margin:14px 0 8px}
+    .result ul{margin:8px 0 0; padding-left:18px}
+    .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .badge{font-size:12px; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:6px 10px}
+  </style>
 </head>
+
 <body>
-  <h1>AscendCortex™ Map Engine Optimization</h1>
+  <div class="wrap">
 
-  <p>
-    We help local businesses in Monterey get discovered on Google Maps
-    and turn local searches into real phone calls and booked appointments.
-  </p>
+    <div class="topbar">
+      <div class="brand">AscendCortex™ <span class="pill">Map Engine Optimization (MEO)</span></div>
+      <div class="pill">Central Coast + Bay Area</div>
+    </div>
 
-  <h2>What is Map Engine Optimization (MEO)?</h2>
-  <p>
-    MEO optimizes how your business appears across Google Maps, Apple Maps,
-    and local search results — so customers find you exactly when they’re ready to buy.
-  </p>
+    <section class="hero">
+      <h1>Get Found on Maps — Then Turn That Visibility Into Calls.</h1>
+      <p>
+        AscendCortex™ MEO improves how your business shows up across Google Maps, Apple Maps, and local search
+        so high-intent buyers can find you at the exact moment they’re ready to act.
+      </p>
 
-  <h2>Who This Is For</h2>
-  <ul>
-    <li>Day Spas & Wellness Clinics</li>
-    <li>Salons & Personal Care Businesses</li>
-    <li>Restaurants & Hospitality</li>
-    <li>Local Service Businesses on the Central Coast and the Bay Area</li>
-  </ul>
+      <ul class="proof">
+        <li>Checks categories, reviews, photos, citations, and competitor position</li>
+        <li>Built for businesses that need calls, bookings, and walk-ins</li>
+        <li>Clear next steps — no fluff, no guessing</li>
+      </ul>
 
-  <h2>What You Get</h2>
-  <ul>
-    <li>Google Business Profile optimization</li>
-    <li>Local keyword and map ranking strategy</li>
-    <li>Review and reputation signals</li>
-    <li>Conversion-focused map visibility</li>
-  </ul>
+      <div class="ctaRow">
+        <button class="btn" type="button" onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'})">
+          Run Visibility & Revenue Check
+        </button>
+        <button class="ghost" type="button" onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})">
+          What is MEO?
+        </button>
+      </div>
+    </section>
 
-<hr>
+    <div id="learn" class="grid">
+      <div class="card">
+        <h2>What is Map Engine Optimization (MEO)?</h2>
+        <p>
+          MEO is the local-demand capture layer. It focuses on how you appear in map results and “near me” searches —
+          the searches that typically convert into real calls and booked appointments.
+        </p>
+        <div class="badgeRow">
+          <span class="badge">Maps visibility</span>
+          <span class="badge">Reputation signals</span>
+          <span class="badge">Conversion path</span>
+        </div>
+      </div>
 
-<h2>Get Your Instant AI MEO Audit</h2>
-<p>See how your business appears on Google Maps — and what’s blocking calls and bookings.</p>
+      <div class="card">
+        <h2>Who This Is For</h2>
+        <ul class="list">
+          <li>Day Spas & Wellness</li>
+          <li>Salons & Personal Care</li>
+          <li>Restaurants & Hospitality</li>
+          <li>Real Estate & Property Services</li>
+          <li>Local Service Businesses</li>
+        </ul>
+        <p class="muted" style="margin-top:10px;">
+          If your customers search locally (“near me”, “open now”, “best in…”), MEO matters.
+        </p>
+      </div>
 
-<form id="meoAuditForm">
-  <label>Business Name</label><br>
-  <input type="text" id="businessName" required><br><br>
+      <div class="card">
+        <h2>What You Get</h2>
+        <ul class="list">
+          <li>Google Business Profile optimization roadmap</li>
+          <li>Local keyword + map ranking strategy</li>
+          <li>Review and reputation signal plan</li>
+          <li>Conversion-focused actions that drive calls/bookings</li>
+        </ul>
+      </div>
 
-  <label>Business Type</label><br>
-  <select id="businessType">
-    <option>Day Spa / Wellness</option>
-    <option>Salon / Personal Care</option>
-    <option>Real Estate / Land Acquisition</option>
-    <option>Restaurant / Hospitality</option>
-    <option>Local Service Business</option>
-    <option>Other</option>
-  </select><br><br>
+      <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <h2>Reality Check</h2>
+          <p>
+            Most businesses aren’t losing because they’re “bad.” They’re losing because their map presence is
+            under-signaled, under-proofed, and not built to convert.
+          </p>
+        </div>
+        <p class="muted" style="margin:10px 0 0;">This audit highlights the gaps and the next move.</p>
+      </div>
+    </div>
 
-  <label>Main Goal</label><br>
-  <select id="businessGoal">
-    <option>More phone calls</option>
-    <option>More bookings</option>
-    <option>More visibility</option>
-  </select><br><br>
+    <div class="divider"></div>
 
-  <button type="submit">Run My AI MEO Audit</button>
-</form>
+    <section id="audit" class="card">
+      <div class="formTitle">
+        <h2>Get Your Instant AI MEO Audit</h2>
+        <div class="trust">No spam • Plain English • Clear next steps</div>
+      </div>
+      <p class="muted">See how your business appears on Maps — and what may be blocking calls and bookings.</p>
 
-<div id="auditResult" style="margin-top:30px;"></div>
+      <form id="meoAuditForm">
+        <label for="businessName">Business Name</label>
+        <input type="text" id="businessName" placeholder="Example: Coastal Wellness Studio" required />
+        <div class="hint">Use your public-facing name (what customers search).</div>
 
-<script>
-document.getElementById("meoAuditForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+        <label for="businessType">Business Type</label>
+        <select id="businessType">
+          <option>Day Spa / Wellness</option>
+          <option>Salon / Personal Care</option>
+          <option>Real Estate / Property Services</option>
+          <option>Restaurant / Hospitality</option>
+          <option>Local Service Business</option>
+          <option>Other (Describe Below)</option>
+        </select>
 
-  const name = document.getElementById("businessName").value;
-  const type = document.getElementById("businessType").value;
-  const goal = document.getElementById("businessGoal").value;
+        <div id="otherWrap" style="display:none;">
+          <label for="otherType">Describe Your Business (1 sentence)</label>
+          <input type="text" id="otherType" maxlength="120" placeholder="Example: Mobile notary + loan signing service" />
+          <div class="hint">Keep it short so the audit can be targeted.</div>
+        </div>
 
-  document.getElementById("auditResult").innerHTML = `
-    <h3>AI MEO Audit Results for ${name}</h3>
+        <label for="businessGoal">Main Goal</label>
+        <select id="businessGoal">
+          <option>More phone calls</option>
+          <option>More bookings</option>
+          <option>More visibility</option>
+        </select>
 
-    <p><strong>Business Type:</strong> ${type}</p>
-    <p><strong>Primary Goal:</strong> ${goal}</p>
+        <div class="actions">
+          <button class="btn" type="submit">Reveal What’s Blocking Calls</button>
+          <button class="ghost" type="button" onclick="window.location.href='mailto:jdtmg1@gmail.com?subject=AscendCortex%20MEO%20Request'">
+            Request Full Implementation
+          </button>
+        </div>
+      </form>
 
-    <h4>Visibility Diagnosis</h4>
-    <ul>
-      <li>Your Google Maps listing is likely under-optimized for high-intent local searches</li>
-      <li>Map keywords are not aligned with buyer-ready phrases</li>
-      <li>Conversion signals (reviews, categories, actions) are weak or inconsistent</li>
-    </ul>
+      <div id="auditResult"></div>
+    </section>
 
-    <h4>AI Recommended Actions</h4>
-    <ul>
-      <li>Optimize map categories + service descriptions for intent</li>
-      <li>Increase review velocity using conversion timing</li>
-      <li>Connect Maps traffic to an automated follow-up system</li>
-    </ul>
+  </div>
 
-    <p><strong>Estimated Impact:</strong> +20–40% increase in calls within 30–60 days when properly implemented.</p>
+  <script>
+    const businessTypeEl = document.getElementById("businessType");
+    const otherWrap = document.getElementById("otherWrap");
+    const otherTypeEl = document.getElementById("otherType");
 
-    <p><strong>Next Step:</strong> Book a full AscendCortex™ MEO implementation.</p>
+    businessTypeEl.addEventListener("change", () => {
+      const isOther = businessTypeEl.value.toLowerCase().includes("other");
+      otherWrap.style.display = isOther ? "block" : "none";
+      if (!isOther) otherTypeEl.value = "";
+    });
 
-    <a href="mailto:jdtmg1@gmail.com"><strong>Request Full AI Optimization →</strong></a>
-  `;
-});
-</script>
+    document.getElementById("meoAuditForm").addEventListener("submit", function(e) {
+      e.preventDefault();
 
+      const name = document.getElementById("businessName").value.trim();
+      const type = businessTypeEl.value;
+      const goal = document.getElementById("businessGoal").value;
+      const other = otherTypeEl.value.trim();
+
+      const finalType = type.toLowerCase().includes("other") && other ? other : type;
+
+      // NOTE: This is still a "preview" audit. Keep claims conservative to protect trust.
+      document.getElementById("auditResult").innerHTML = `
+        <div class="result">
+          <h3>AI MEO Audit Preview: ${name}</h3>
+          <p class="muted"><strong>Business Type:</strong> ${finalType}<br/>
+          <strong>Primary Goal:</strong> ${goal}</p>
+
+          <h4>Visibility Diagnosis (Common Blockers)</h4>
+          <ul>
+            <li>Categories and services may not match buyer-intent searches (near me / open now / best).</li>
+            <li>Review signals may be inconsistent (volume, velocity, keywords, recency).</li>
+            <li>On-page and citation consistency (NAP + service areas) may be weakening map trust.</li>
+            <li>Competitors may be out-signaling you with stronger photos, posts, and engagement loops.</li>
+          </ul>
+
+          <h4>Recommended Actions (Next Move)</h4>
+          <ul>
+            <li>Align primary/secondary categories + rewrite services with intent-based phrasing.</li>
+            <li>Deploy a review engine that increases velocity without violating platform policies.</li>
+            <li>Strengthen local trust signals: photos, posts, citations, service areas, and conversion path.</li>
+          </ul>
+
+          <p class="muted"><strong>Next Step:</strong> If you want the full implementation roadmap and setup, request the complete MEO build.</p>
+          <a href="mailto:jdtmg1@gmail.com?subject=AscendCortex%20MEO%20Full%20Audit%20Request&body=Business%20Name:%20${encodeURIComponent(name)}%0ABusiness%20Type:%20${encodeURIComponent(finalType)}%0AMain%20Goal:%20${encodeURIComponent(goal)}">
+            <strong>Request Full AI Optimization →</strong>
+          </a>
+        </div>
+      `;
+    });
+  </script>
 </body>
+</html>
