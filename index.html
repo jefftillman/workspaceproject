@@ -21,7 +21,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
         radial-gradient(1000px 600px at 20% -10%, rgba(110,231,255,.14), transparent 60%),
         radial-gradient(900px 500px at 90% 0%, rgba(167,139,250,.12), transparent 55%),
@@ -33,601 +33,182 @@
     a:hover{text-decoration:underline}
 
     .wrap{max-width:980px; margin:0 auto; padding:32px 18px 70px}
+
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0 22px;
+      display:flex; justify-content:space-between; align-items:center;
+      padding-bottom:22px; margin-bottom:26px;
       border-bottom:1px solid var(--line);
-      margin-bottom:22px;
-      gap:12px;
-      flex-wrap:wrap;
     }
-    .brand{
-      font-weight:900;
-      letter-spacing:.2px;
-      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
-    }
+    .brand{font-weight:800}
     .pill{
       font-size:12px; color:var(--muted);
-      border:1px solid var(--line); padding:6px 10px; border-radius:999px;
-      background: rgba(255,255,255,.03);
-      white-space:nowrap;
-    }
-
-    .hero{padding:22px 0 14px}
-    .hero h1{
-      margin:0 0 10px;
-      font-size:40px;
-      line-height:1.05;
-      letter-spacing:-.6px;
-    }
-    .hero p{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:16px;
-      max-width:75ch;
-    }
-
-    .proof{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin:0 0 18px; padding:0; list-style:none;
-    }
-    .proof li{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding:10px 12px;
-      border-radius:12px;
-      color:var(--text);
-      font-size:13px;
+      padding:6px 10px; border-radius:999px;
+      background:rgba(255,255,255,.03);
     }
 
-    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    h1{font-size:38px; margin-bottom:10px}
+    h2{font-size:20px}
+    p{color:var(--muted)}
+
     .btn{
-      border:none;
-      border-radius:14px;
-      padding:12px 16px;
-      font-weight:800;
+      border:none; border-radius:14px;
+      padding:12px 18px; font-weight:700;
       cursor:pointer;
-      background: linear-gradient(90deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      background:linear-gradient(90deg,var(--accent),var(--accent2));
       color:#061018;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-    .btn:active{transform: translateY(1px)}
     .ghost{
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background:rgba(255,255,255,.03);
       color:var(--text);
       border-radius:14px;
-      padding:12px 16px;
-      font-weight:800;
+      padding:12px 18px;
       cursor:pointer;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      margin-top:18px;
-    }
-    @media (max-width: 860px){
-      .grid{grid-template-columns:1fr}
-      .hero h1{font-size:34px}
     }
 
     .card{
       border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
       border-radius:18px;
       padding:18px;
+      margin-top:16px;
     }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .list{margin:10px 0 0; padding-left:18px; color:var(--text)}
-    .list li{margin:6px 0}
-    .muted{color:var(--muted)}
-    .divider{height:1px; background:var(--line); margin:22px 0}
 
-    /* Form */
-    .formTitle{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:flex-start;
-      margin-bottom:10px;
-    }
-    .formTitle h2{margin:0}
-    .trust{
-      font-size:12px; color:var(--muted);
-      border:1px solid var(--line); padding:6px 10px; border-radius:999px;
-      background: rgba(255,255,255,.03);
-      height:fit-content;
-    }
-    label{display:block; margin:12px 0 6px; font-weight:750; font-size:13px}
-    input, select, textarea{
-      width:100%;
-      padding:12px 12px;
+    label{display:block; margin-top:14px; font-weight:600}
+    input, select{
+      width:100%; padding:12px;
+      margin-top:6px;
       border-radius:12px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
+      background:rgba(255,255,255,.02);
       color:var(--text);
-      outline:none;
     }
-    textarea{min-height:96px; resize:vertical}
-    .hint{font-size:12px; color:var(--muted); margin-top:6px}
-    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; align-items:center}
-    .spinner{
-      display:inline-block;
-      width:14px; height:14px;
-      border:2px solid rgba(6,16,24,.35);
-      border-top-color: rgba(6,16,24,.95);
-      border-radius:999px;
-      margin-right:8px;
-      animation: spin .75s linear infinite;
-      vertical-align:-2px;
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
 
     .result{
-      margin-top:16px;
+      margin-top:18px;
       padding:16px;
       border-radius:16px;
       border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
+      background:rgba(255,255,255,.03);
     }
-    .result h3{margin:0 0 8px}
-    .result h4{margin:14px 0 8px}
-    .result ul{margin:8px 0 0; padding-left:18px}
-    .badgeRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .badge{
-      font-size:12px;
-      color:var(--muted);
-      border:1px solid var(--line);
-      border-radius:999px;
-      padding:6px 10px
-    }
-    .scoreRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-    .score{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      padding:10px 12px;
-      border-radius:14px;
-      min-width: 190px;
-      flex: 1;
-    }
-    .score .k{font-size:12px; color:var(--muted)}
-    .score .v{font-size:22px; font-weight:900; margin-top:2px}
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      font-size:12px;
-      border:1px solid var(--line);
-      padding:6px 10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      margin-top:8px;
-    }
-    .dot{width:9px; height:9px; border-radius:999px; display:inline-block}
-    .dot.good{background:var(--good)}
-    .dot.warn{background:var(--warn)}
-    .dot.bad{background:var(--bad)}
 
-    footer{
-      margin-top:18px;
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:12px;
-      padding-top:14px;
-      border-top:1px solid var(--line);
+    .score{font-size:28px; font-weight:800}
+    .good{color:var(--good)}
+    .warn{color:var(--warn)}
+    .bad{color:var(--bad)}
+
+    /* Modal */
+    .modal{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.7);
+      display:none; align-items:center; justify-content:center;
+      z-index:999;
     }
+    .modalContent{
+      background:#0f1624;
+      border-radius:16px;
+      padding:16px;
+      max-width:720px;
+      width:90%;
+    }
+    iframe{width:100%; height:380px; border-radius:12px}
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <div class="topbar">
-      <div class="brand">
-        AscendCortex™
-        <span class="pill">MEO + AEO</span>
-        <span class="pill">Monterey / Central Coast / Bay Area </span>
-      </div>
-      <div class="pill">Calls • Bookings • Revenue</div>
-    </div>
-
-    <section class="hero">
-      <h1>Turn “Near Me” Searches Into Calls — And Turn Attention Into Bookings.</h1>
-      <p>
-        AscendCortex™ blends <strong>Map Engine Optimization (MEO)</strong> with <strong>Answer Engine Optimization (AEO)</strong>
-        so local buyers find you on Maps <em>and</em> choose you when they ask AI/voice “who’s best nearby?”
-      </p>
-
-      <ul class="proof">
-        <li><strong>MEO:</strong> Google Maps visibility → calls, directions, walk-ins</li>
-        <li><strong>AEO:</strong> AI/voice answers → trust + top-of-mind selection</li>
-        <li>Mini audit gives you the <strong>next move</strong> in 60 seconds</li>
-      </ul>
-
-      <div class="ctaRow">
-        <button class="btn" type="button" onclick="document.getElementById('audit').scrollIntoView({behavior:'smooth'})">
-          Run Mini Audit (Free)
-        </button>
-        <button class="ghost" type="button" onclick="document.getElementById('learn').scrollIntoView({behavior:'smooth'})">
-          What is MEO + AEO?
-        </button>
-      </div>
-    </section>
-
-    <div id="learn" class="grid">
-      <div class="card">
-        <h2>What is MEO?</h2>
-        <p>
-          <strong>Map Engine Optimization</strong> improves how you appear across Google Maps, Apple Maps,
-          and local search — the exact searches that convert into <strong>calls</strong> and <strong>booked appointments</strong>.
-        </p>
-        <div class="badgeRow">
-          <span class="badge">Maps visibility</span>
-          <span class="badge">Reputation signals</span>
-          <span class="badge">Conversion path</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>What is AEO?</h2>
-        <p>
-          <strong>Answer Engine Optimization</strong> positions your business to be selected when people ask AI/voice:
-          “best day spa near me”, “top massage Monterey”, “where should I go today?”
-        </p>
-        <div class="badgeRow">
-          <span class="badge">AI/voice answers</span>
-          <span class="badge">Entity clarity</span>
-          <span class="badge">Proof & trust</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Who This Is For</h2>
-        <ul class="list">
-          <li>Day Spas & Wellness</li>
-          <li>Salons & Personal Care</li>
-          <li>Restaurants & Hospitality</li>
-          <li>Real Estate & Property Services</li>
-          <li>Local Service Businesses</li>
-        </ul>
-        <p class="muted" style="margin-top:10px;">
-          If customers search “near me”, “open now”, “best in…” — this is your money zone.
-        </p>
-      </div>
-
-      <div class="card" style="display:flex; flex-direction:column; justify-content:space-between;">
-        <div>
-          <h2>Reality Check</h2>
-          <p>
-            Businesses don’t lose because they’re “bad.”
-            They lose because they’re <strong>under-signaled</strong> (Maps) and <strong>under-chosen</strong> (AI answers).
-          </p>
-        </div>
-        <p class="muted" style="margin:10px 0 0;">The mini audit shows the fastest leverage points.</p>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <section id="audit" class="card">
-      <div class="formTitle">
-        <h2>Free Mini Audit (MEO + AEO)</h2>
-        <div class="trust">Instant • No login • Clear next steps</div>
-      </div>
-      <p class="muted">
-        Answer these 5 fields. You’ll get a mini audit you can act on today.
-      </p>
-
-      <form id="auditForm">
-        <label for="businessName">Business Name</label>
-        <input type="text" id="businessName" placeholder="Example: Coastal Wellness Studio" required />
-        <div class="hint">Use your public-facing name (what customers search).</div>
-
-        <label for="location">City / Area</label>
-        <input type="text" id="location" placeholder="Example: Monterey, CA" value="Monterey, CA" required />
-        <div class="hint">This helps tailor the language to local buyer intent.</div>
-
-        <label for="businessType">Business Type</label>
-        <select id="businessType">
-          <option>Day Spa / Wellness</option>
-          <option>Salon / Personal Care</option>
-          <option>Real Estate / Property Services</option>
-          <option>Restaurant / Hospitality</option>
-          <option>Local Service Business</option>
-          <option>Other (Describe Below)</option>
-        </select>
-
-        <div id="otherWrap" style="display:none;">
-          <label for="otherType">Describe Your Business (1 sentence)</label>
-          <input type="text" id="otherType" maxlength="140" placeholder="Example: Mobile notary + loan signing service" />
-          <div class="hint">Keep it short so the mini audit stays focused.</div>
-        </div>
-
-        <label for="goal">Primary Goal</label>
-        <select id="goal">
-          <option>More phone calls</option>
-          <option>More bookings</option>
-          <option>More visibility</option>
-          <option>More walk-ins</option>
-        </select>
-
-        <label for="competitor">Top Competitor (optional)</label>
-        <input type="text" id="competitor" placeholder="Example: (competitor business name)" />
-        <div class="hint">If you know who outranks you, we’ll tailor the attack plan.</div>
-
-        <label for="notes">Notes (optional)</label>
-        <textarea id="notes" placeholder="Example: Slow days Mon–Wed. We want more memberships. Competitor outranks us for 'best spa'..."></textarea>
-
-        <div class="actions">
-          <button id="submitBtn" class="btn" type="submit">Generate Mini Audit</button>
-          <button class="ghost" type="button" id="emailBtn">Request Full Audit (Email)</button>
-        </div>
-
-        <div class="hint">
-          This page generates <strong>a mini audit</strong> instantly and helps you request a full audit.
-        </div>
-      </form>
-
-      <div id="result"></div>
-    </section>
-
-    <footer>
-      <div>© <span id="year"></span> Moor AI Labs • AscendCortex™</div>
-      <div>Contact: <a href="mailto:jdtmg1@gmail.com">jdtmg1@gmail.com</a></div>
-    </footer>
-
+  <div class="topbar">
+    <div class="brand">AscendCortex™ <span class="pill">MEO + AEO</span></div>
+    <div class="pill">Central Coast + Bay Area</div>
   </div>
 
-  <script>
-    // ---------- Helpers ----------
-    const $ = (id) => document.getElementById(id);
+  <h1>Get Found on Maps — and in AI Answers</h1>
+  <p>
+    AscendCortex™ combines <strong>Map Engine Optimization (MEO)</strong> and
+    <strong>Answer Engine Optimization (AEO)</strong> so customers — and AI —
+    choose your business first.
+  </p>
 
-    function esc(str){
-      return String(str || "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
+  <button class="ghost" onclick="openHelp()">How This Works ▶</button>
 
-    function pick(arr){ return arr[Math.floor(Math.random()*arr.length)] }
+  <div class="card">
+    <h2>Instant Mini Visibility Audit</h2>
 
-    function scoreTag(score){
-      if (score >= 75) return {label:"Strong base", cls:"good"};
-      if (score >= 50) return {label:"Fixable gaps", cls:"warn"};
-      return {label:"Leaking demand", cls:"bad"};
-    }
+    <form id="auditForm">
+      <label>Business Name</label>
+      <input id="name" required>
 
-    // ---------- UI wiring ----------
-    const businessTypeEl = $("businessType");
-    const otherWrap = $("otherWrap");
-    const otherTypeEl = $("otherType");
+      <label>Business Type</label>
+      <select id="type">
+        <option>Day Spa / Wellness</option>
+        <option>Salon / Personal Care</option>
+        <option>Restaurant / Hospitality</option>
+        <option>Real Estate / Property Services</option>
+        <option>Local Service Business</option>
+      </select>
 
-    businessTypeEl.addEventListener("change", () => {
-      const isOther = businessTypeEl.value.toLowerCase().includes("other");
-      otherWrap.style.display = isOther ? "block": "none";
-      if (!isOther) otherTypeEl.value = "";
-    });
+      <label>Main Goal</label>
+      <select id="goal">
+        <option>More calls</option>
+        <option>More bookings</option>
+        <option>More visibility</option>
+      </select>
 
-    $("year").textContent = new Date().getFullYear();
+      <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap">
+        <button class="btn" type="submit">Run Mini Audit</button>
+        <a class="ghost" href="mailto:jdtmg1@gmail.com?subject=AscendCortex Full Audit Request">
+          Request Full Audit
+        </a>
+      </div>
+    </form>
 
-    // ---------- Mini audit generator (NO webhook, NO OpenAI calls) ----------
-    function generateMiniAudit(data){
-      const { name, location, type, goal, competitor, notes } = data;
+    <div id="output"></div>
+  </div>
 
-      const focusByGoal = {
-        "More phone calls": ["tap-to-call", "primary category precision", "call-focused copy", "hours/attributes accuracy"],
-        "More bookings": ["booking link prominence", "service menu clarity", "offers", "conversion path"],
-        "More visibility": ["category/service coverage", "photos/posts cadence", "citations consistency", "local content"],
-        "More walk-ins": ["directions intent", "hours + attributes", "photo proof", "local discovery keywords"]
-      };
+</div>
 
-      const meoBlockers = [
-        "Your primary/secondary categories don’t perfectly match high-intent searches (near me / open now / best).",
-        "Your review profile may be missing velocity, recency, and keyword proof (services + city).",
-        "Your photos/posts cadence may be too quiet to out-signal active competitors.",
-        "Your business info consistency (name/address/phone + service areas) may be weakening map trust."
-      ];
+<!-- Help Modal -->
+<div class="modal" id="helpModal" onclick="closeHelp()">
+  <div class="modalContent" onclick="event.stopPropagation()">
+    <iframe
+      src="https://www.youtube.com/embed/9cNAXaXRueg"
+      title="AscendCortex Explainer"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
 
-      const aeoBlockers = [
-        "AI/voice engines may not clearly understand your “entity” (what you are, who you serve, and where).",
-        "Your website/GBP copy may not answer the exact questions buyers ask AI ('best ___ in Monterey').",
-        "You may lack proof signals that AI uses to rank confidence (reviews, consistent mentions, FAQs, structured info)."
-      ];
+<script>
+document.getElementById("auditForm").addEventListener("submit", e => {
+  e.preventDefault();
 
-      const quickWins = [
-        "Lock the #1 category + 2–3 secondary categories that match buyer intent — then rewrite services to mirror real searches.",
-        "Launch a 14-day review sprint focused on recency + service keywords (without incentivizing reviews).",
-        "Post 3× per week on GBP: offer, before/after, FAQ — and refresh photos weekly for 30 days.",
-        "Add a single conversion action everywhere: call / book / offer — remove choice overload."
-      ];
+  const score = Math.floor(Math.random()*21)+60;
+  let cls = score >= 80 ? "good" : score >= 65 ? "warn" : "bad";
+  let label = score >= 80 ? "Strong" : score >= 65 ? "Average" : "Weak";
 
-      const aeoWins = [
-        "Add an FAQ block on your site answering: pricing range, services, location, hours, and “best for” use-cases.",
-        "Create a 'Services in " + location + "' section (same-language as search queries) + internal links.",
-        "Add clear, consistent NAP + service areas + schema/structured info (so AI understands your business).",
-        "Publish 2 short local pages: “Best [service] in " + location + "” + “" + location + " [service] pricing”."
-      ];
+  document.getElementById("output").innerHTML = `
+    <div class="result">
+      <div class="score ${cls}">${score}/100</div>
+      <p><strong>Status:</strong> ${label} visibility</p>
+      <ul>
+        <li>MEO: Map categories, reviews, and photos need alignment</li>
+        <li>AEO: Business not structured for AI answers</li>
+        <li>Competitors likely outranking in local + AI results</li>
+      </ul>
+      <p><strong>Next step:</strong> Full AscendCortex optimization</p>
+    </div>
+  `;
+});
 
-      // Lightweight scoring heuristic (client-side only)
-      let base = 55;
-      if (competitor) base -= 5;
-      if (notes && notes.length > 30) base += 5;
-      if (type.toLowerCase().includes("day spa") || type.toLowerCase().includes("wellness")) base += 5;
-      base = Math.max(25, Math.min(85, base));
+function openHelp(){
+  document.getElementById("helpModal").style.display="flex";
+}
+function closeHelp(){
+  document.getElementById("helpModal").style.display="none";
+}
+</script>
 
-      const meoScore = Math.max(20, Math.min(90, base + (goal.includes("calls") ? 8 : 0)));
-      const aeoScore = Math.max(20, Math.min(90, base - (goal.includes("walk-ins") ? 5 : 0)));
-      const overall = Math.round((meoScore + aeoScore) / 2);
-      const tag = scoreTag(overall);
-
-      const focus = focusByGoal[goal] || focusByGoal["More bookings"];
-
-      const opener = [
-        `Right now, <strong>${esc(name)}</strong> is likely leaving money on the table because your visibility isn’t fully connected to a conversion path.`,
-        `If you're not getting consistent ${goal.toLowerCase()}, it’s usually not “marketing” — it’s missing signals + a weak path to action.`,
-        `Local demand exists. The problem is that Maps + AI answers aren’t choosing you consistently — yet.`
-      ];
-
-      const competitorLine = competitor
-        ? `<p class="muted"><strong>Competitor noted:</strong> ${esc(competitor)} (we’ll build signals to out-rank/out-choose them)</p>`
-        : `<p class="muted"><strong>Competitor noted:</strong> none provided (we’ll benchmark against the top 3 in your category)</p>`;
-
-      const notesLine = notes
-        ? `<p class="muted"><strong>Your notes:</strong> ${esc(notes)}</p>`
-        : ``;
-
-      return `
-        <div class="result">
-          <h3>Mini Audit: ${esc(name)} <span class="pill" style="margin-left:8px;">${esc(location)}</span></h3>
-          <p class="muted"><strong>Type:</strong> ${esc(type)} &nbsp;•&nbsp; <strong>Goal:</strong> ${esc(goal)}</p>
-          ${competitorLine}
-          ${notesLine}
-
-          <div class="scoreRow">
-            <div class="score">
-              <div class="k">Overall Signal Strength</div>
-              <div class="v">${overall}/100</div>
-              <div class="tag"><span class="dot ${tag.cls}"></span>${tag.label}</div>
-            </div>
-            <div class="score">
-              <div class="k">MEO (Maps)</div>
-              <div class="v">${meoScore}/100</div>
-              <div class="tag"><span class="dot ${meoScore >= 65 ? "good" : (meoScore >= 45 ? "warn" : "bad")}"></span>Maps conversion</div>
-            </div>
-            <div class="score">
-              <div class="k">AEO (AI Answers)</div>
-              <div class="v">${aeoScore}/100</div>
-              <div class="tag"><span class="dot ${aeoScore >= 65 ? "good" : (aeoScore >= 45 ? "warn" : "bad")}"></span>AI/voice selection</div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px;"></div>
-          <p>${pick(opener)}</p>
-
-          <h4>Highest-Leverage Focus (Next 7 Days)</h4>
-          <ul>
-            <li><strong>${esc(focus[0])}</strong> — make it impossible to miss the action.</li>
-            <li><strong>${esc(focus[1])}</strong> — align what you are with what buyers search.</li>
-            <li><strong>${esc(focus[2])}</strong> — proof + clarity beats “pretty content.”</li>
-            <li><strong>${esc(focus[3])}</strong> — remove friction between discovery and purchase.</li>
-          </ul>
-
-          <h4>MEO Blockers (Maps)</h4>
-          <ul>
-            <li>${meoBlockers[0]}</li>
-            <li>${meoBlockers[1]}</li>
-            <li>${meoBlockers[2]}</li>
-            <li>${meoBlockers[3]}</li>
-          </ul>
-
-          <h4>AEO Blockers (AI / Voice Answers)</h4>
-          <ul>
-            <li>${aeoBlockers[0]}</li>
-            <li>${aeoBlockers[1]}</li>
-            <li>${aeoBlockers[2]}</li>
-          </ul>
-
-          <h4>Fast Wins (You Can Execute This Week)</h4>
-          <ul>
-            <li>${quickWins[0]}</li>
-            <li>${quickWins[1]}</li>
-            <li>${quickWins[2]}</li>
-            <li>${quickWins[3]}</li>
-          </ul>
-
-          <h4>AEO Wins (So AI Chooses You)</h4>
-          <ul>
-            <li>${aeoWins[0]}</li>
-            <li>${aeoWins[1]}</li>
-            <li>${aeoWins[2]}</li>
-            <li>${aeoWins[3]}</li>
-          </ul>
-
-          <p class="muted">
-            <strong>Next Step:</strong> Want the full audit with screenshots, keyword targets, competitor benchmark,
-            and a step-by-step implementation plan? Request the full audit below.
-          </p>
-
-          <div class="actions" style="margin-top:10px;">
-            <button class="btn" type="button" id="fullAuditBtn">Request Full Audit (Email)</button>
-            <button class="ghost" type="button" onclick="window.scrollTo({top:0, behavior:'smooth'})">Back to Top</button>
-          </div>
-        </div>
-      `;
-    }
-
-    // ---------- Form submit ----------
-    $("auditForm").addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = $("businessName").value.trim();
-      const location = $("location").value.trim();
-      const typeRaw = businessTypeEl.value;
-      const other = otherTypeEl.value.trim();
-      const type = (typeRaw.toLowerCase().includes("other") && other) ? other : typeRaw;
-      const goal = $("goal").value;
-      const competitor = $("competitor").value.trim();
-      const notes = $("notes").value.trim();
-
-      if(!name || !location){
-        $("result").innerHTML = `<div class="result"><h3>Missing Info</h3><p class="muted">Please enter a business name and location.</p></div>`;
-        return;
-      }
-
-      const btn = $("submitBtn");
-      btn.disabled = true;
-      btn.innerHTML = `<span class="spinner"></span>Generating…`;
-
-      // simulate a tiny delay for UX polish (still instant)
-      setTimeout(() => {
-        const html = generateMiniAudit({ name, location, type, goal, competitor, notes });
-        $("result").innerHTML = html;
-
-        // wire the full audit button inside results
-        const fullBtn = document.getElementById("fullAuditBtn");
-        if(fullBtn){
-          fullBtn.addEventListener("click", () => {
-            const subject = `AscendCortex™ Full Audit Request — ${name}`;
-            const body =
-`Business Name: ${name}
-Location: ${location}
-Business Type: ${type}
-Primary Goal: ${goal}
-Top Competitor: ${competitor || "N/A"}
-Notes: ${notes || "N/A"}
-
-Please send the full audit + implementation plan.`;
-            window.location.href = `mailto:jdtmg1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-          });
-        }
-
-        btn.disabled = false;
-        btn.textContent = "Generate Mini Audit";
-      }, 350);
-    });
-
-    // top-level email request
-    $("emailBtn").addEventListener("click", () => {
-      const name = $("businessName").value.trim() || "[Business Name]";
-      const location = $("location").value.trim() || "Monterey, CA";
-      const subject = `AscendCortex™ Full Audit Request — ${name}`;
-      const body =
-`Business Name: ${name}
-Location: ${location}
-
-Please send the full audit + implementation plan.`;
-      window.location.href = `mailto:jdtmg1@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
-  </script>
 </body>
 </html>
