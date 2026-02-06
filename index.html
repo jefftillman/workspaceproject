@@ -372,7 +372,7 @@
         </div>
 
         <div class="hint">
-          This page does <strong>not</strong> call any AI. It generates a mini audit instantly and helps you request a full audit.
+          This page generates <strong>a mini audit</strong> instantly and helps you request a full audit.
         </div>
       </form>
 
@@ -414,7 +414,7 @@
 
     businessTypeEl.addEventListener("change", () => {
       const isOther = businessTypeEl.value.toLowerCase().includes("other");
-      otherWrap.style.display = isOther ? "block" : "none";
+      otherWrap.style.display = isOther ? "block": "none";
       if (!isOther) otherTypeEl.value = "";
     });
 
